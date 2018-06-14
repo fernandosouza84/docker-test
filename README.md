@@ -26,3 +26,7 @@ docker container run --name mydebian -it debian bash
 
 #reutilizar um container
 docker container start -ai {NAME_CONTAINER}
+
+#mapeando portas do container
+docker container run -p 8080:80 nginx
+
