@@ -1,0 +1,17 @@
+#valor default
+#docker image build -t ex-build-arg .
+#docker container run ex-build-arg bash -c 'echo $S3_BUCKET'
+
+#with args
+#docker image build --build-arg S3_BUCKET=myapp -t ex-build-arg .
+#docker container run ex-build-arg bash -c 'echo $S3_BUCKET'
+
+#inspect
+#docker image inspect ex-build-arg
+#docker image inspect --format="{{index .Config.Labels \"mainteiner\"}}" ex-build-arg
+
+FROM debian
+LABEL mainteiner 'Fernando Souza <fernando.de.souza@gmail.com>'
+
+ARG S3_BUCKET=files
+ENV S3_BUCKET=${S3_BUCKET}
