@@ -18,7 +18,7 @@ logging.basicConfig(
 )
 logging.getLogger().addHandler(logging.StreamHandler())
 logging.info('inicializando...')
-PORT=8080
+PORT=8000
 
 httpd = SocketServer.TCPServer(("",PORT),MyHTTPHandler)
 logging.info('escutando a porta: %s', PORT)
